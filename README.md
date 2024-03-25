@@ -8,12 +8,12 @@ Script for interactive ordering system from food truck menu
 
 ## Description
 
-*Order System* 
+**_Order System._** 
 The order system script prompts customer to place an order and stores order in a dictionary format. Customer inputs are validated for both input format and for selection validity. Default values are included for invalid customer entries to prevent code errors.
 
 Upon completion of initial order, customer is prompted to continue ordering. Once customer indicates order is complete, customers order is added to an order dictionary.
 
-*Order Receipt* 
+**_Order Receipt._** 
 The order receipt script displays customer's full order, including items ordered along with price and quanity of each item ordered, in a tabular formate with the final price of order displayed at the bottom of the reciept.
 
 ### Skills Demonstrated
