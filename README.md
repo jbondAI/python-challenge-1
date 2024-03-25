@@ -17,7 +17,7 @@ Upon completion of initial order, customer is prompted to continue ordering. Onc
 The order receipt script displays customer's full order, including items ordered along with price and quanity of each item ordered, in a tabular formate with the final price of order displayed at the bottom of the reciept.
 
 ### Skills Demonstrated
-The python script demonstrates use of the following coding skills
+This challenge assignment demonstrates use of the following common python coding skills
 * Proper use of list and dictionary data structures
 * Ability to intake, validate and use user inputs
 * Proper use of conditional statements and loops
