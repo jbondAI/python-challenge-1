@@ -217,18 +217,26 @@ while place_order:
 
     # Print out the customer's order
 print("\nThis is what we are preparing for you.")
-print (customer_order)
+
+#Check of customer_order list contents
+#print (customer_order)
     # --------- ORDER RECEIPT ---------
 
 print("\nItem name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6) Use for loop to loop through order menu_selection list
-for key3, value3 in [customer_order].items():
-
+i=0
+sum = 0
+for line_items in customer_order:
     # 7) For Loop Code Block: save each key as variables (item_name, price and quanity)
+    item_name = customer_order[i].get("Item name")
+    item_price = customer_order[i].get("Price")
+    item_quantity = customer_order[i].get("Quantity")
+
     # 8) Determine character count needed for item_column, price_column, quanity_column
     # 9) Use string mulitplication to create space strings as own variable
+
     # 10) Print the line for reciept using format below
 
     # Item name                 | Price  | Quantity
@@ -237,23 +245,17 @@ for key3, value3 in [customer_order].items():
     # Tea - Thai iced           | $3.99  | 2
     # Fried banana              | $4.49  | 3
 
-
-    print (f"{key3}{item_spaces} | ${value3}  | {quantity_ordered}")
-    customer_order[menu_category_name] = {
-        "Item name": key2 + " - " + key3,
-        "Price": value3 + " - " + key3,
-        "Quantity": value3 + " - " + key3
-    }
-    i += 1
-
-price_list = [Price for Price in customer_order]
-quantity_list = [quantity_ordered in customer_order]
-total_cost = list(map(lambda x, y: x * y, price_list, quantity))
-print(total_cost)
+    num_item_spaces = 28 - len(item_name) - 3
+    item_spaces = " " * num_item_spaces
+    print (f"{item_name}{item_spaces} | ${item_price}  | {item_quantity}")
 
     # 11) When exiting for loop, calcute and display total price of order 
     #     Use list comprehension and sum() function (remember: price * quantity)
-    #     REQUIREMENT: list comprehension used to calcuate total price
-    #     REQUIREMENT: total price printed to screen
-    # 
+    sum = sum + customer_order[i].get("Price") * customer_order[i].get("Quantity")
+    i += 1
+
+# Prints total order amount
+print(f"\n Your total comes to ${sum}")
+
+
     
