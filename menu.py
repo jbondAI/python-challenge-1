@@ -125,8 +125,10 @@ while place_order:
                 if type(value) is dict:
                     for key2, value2 in value.items():
                         num_item_spaces = 24 - len(key + key2) - 3
+                        num_price_spaces = 8 - len("{:.2f}".format(value2))
                         item_spaces = " " * num_item_spaces
-                        print(f"{i}      | {key} - {key2}{item_spaces} | ${value2}")
+                        price_spaces = " " * num_price_spaces
+                        print(f"{i}      | {key} - {key2}{item_spaces} | ${value2}{price_spaces}")
                         menu_items[i] = {
                             "Item name": key + " - " + key2,
                             "Price": value2
@@ -134,8 +136,10 @@ while place_order:
                         i += 1
                 else:
                     num_item_spaces = 24 - len(key)
+                    num_price_spaces = 8 - len("{:.2f}".format(value))
                     item_spaces = " " * num_item_spaces
-                    print(f"{i}      | {key}{item_spaces} | ${value}")
+                    price_spaces = " " * num_price_spaces
+                    print(f"{i}      | {key}{item_spaces} | ${value}{price_spaces}")
                     menu_items[i] = {
                         "Item name": key,
                         "Price": value
@@ -151,9 +155,9 @@ while place_order:
 
                     #Saves selected submenu       
                     item_ordered = menu_items[int(menu_selection_number)]
-                    print(item_ordered)
+                    #print(item_ordered)
                 # Save the menu category name to a variable by indexing menu_item list     
-                    menu_category_name = menu_items[int(menu_category)]
+                   # menu_category_name = menu_items[int(menu_category)]
                     #item_ordered = menu(menu_category_name)[menu_items[int(menu_selection_number)]]
 
                     # Save the menu selection name to a variable by indexing menu_item list     
@@ -255,7 +259,7 @@ for line_items in customer_order:
     i += 1
 
 # Prints total order amount
-print(f"\n Your total comes to ${sum}")
+print(f"\n Your total comes to ${round(sum,2)}")
 
 
     
